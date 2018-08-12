@@ -4,8 +4,7 @@
 # Ceedling test builds
 build
 
-# Doxygen files
-docs/latex
+docs_all
 
 # Builds
 cmake-build-debug
