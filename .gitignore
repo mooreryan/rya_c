@@ -5,8 +5,7 @@
 build
 
 # Doxygen files
-html
-latex
+docs/latex
 
 # Builds
 cmake-build-debug
