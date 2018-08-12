@@ -2,7 +2,7 @@
 
 Snazzy functions in C.  Rya is short for Ryan, cos that's my name!
 
-Currently, I'm on version 0.1.0.
+Currently, I'm on version @RYA_VERSION_STRING@.
 
 ## Install
 

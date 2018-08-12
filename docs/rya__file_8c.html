@@ -22,7 +22,6 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rya
-   &#160;<span id="projectnumber">v0.1.0</span>
    </div>
    <div id="projectbrief">My sweet lib!</div>
   </td>
@@ -67,8 +66,6 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">rya_file.c File Reference</div>  </div>
 </div><!--header-->
@@ -76,63 +73,17 @@ $(function() {
 
 <p>I contain file related functions for the Rya library.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="rya_8h_source.html">rya.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="rya_8h_source.html">rya.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="rya__file_8h_source.html">rya_file.h</a>&quot;</code><br />
-<code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;sys/stat.h&gt;</code><br />
 </div>
 <p><a href="rya__file_8c_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ab54f6b297fb39b6a16c5b247d047b019"><td class="memItemLeft" align="right" valign="top">rya_bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rya__file_8c.html#ab54f6b297fb39b6a16c5b247d047b019">rya_file_exist</a> (const char *fname)</td></tr>
-<tr class="memdesc:ab54f6b297fb39b6a16c5b247d047b019"><td class="mdescLeft">&#160;</td><td class="mdescRight">I tell whether a file exists or not.  <a href="#ab54f6b297fb39b6a16c5b247d047b019">More...</a><br /></td></tr>
-<tr class="separator:ab54f6b297fb39b6a16c5b247d047b019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>I contain file related functions for the Rya library. </p>
 <dl class="section author"><dt>Author</dt><dd>Ryan Moore </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="rya__file_8c_source.html">rya_file.c</a>.</p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="ab54f6b297fb39b6a16c5b247d047b019"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab54f6b297fb39b6a16c5b247d047b019">&#9670;&nbsp;</a></span>rya_file_exist()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">rya_bool rya_file_exist </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>fname</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>I tell whether a file exists or not. </p>
-<p>Basically I'm a wrapper to stat().</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fname</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">rya_error</td><td>if fname is NULL </td></tr>
-    <tr><td class="paramname">rya_false</td><td>if the file does NOT exist </td></tr>
-    <tr><td class="paramname">rya_true</td><td>if the file exists </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="rya__file_8c_source.html#l00023">23</a> of file <a class="el" href="rya__file_8c_source.html">rya_file.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">if</span> (fname == NULL) { <span class="keywordflow">return</span> rya_error; }</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">struct </span>stat st;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">if</span> (stat(fname, &amp;st) &lt; 0) {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> rya_false;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  }</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordflow">else</span> {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> rya_true;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  }</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div></div><!-- fragment -->
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -4,19 +4,19 @@
  * @brief I contain format related functions for the Rya library.
  */
 
-#include <stdarg.h>
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <assert.h>
 #include <string.h>
-#include <stdint.h>
 #include <limits.h>
 #include <errno.h>
 
 #include "rya.h"
 #include "rya_format.h"
 
-#ifdef HAVE_VSNPRINTF
+#if defined(HAVE_STDARG_H) && defined(HAVE_VSNPRINTF)
+#include <stdarg.h>
+
 
 /**
  * @brief More or less a drop-in replacement for asprintf(), except that it should work regardless of whether or not the vsnprintf() implementation is broken.

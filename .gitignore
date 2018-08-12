@@ -7,4 +7,6 @@ build
 docs_all
 
 # Builds
-cmake-build-debug
+cmake-build-*
+
+scratch

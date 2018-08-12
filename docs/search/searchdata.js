@@ -11,17 +11,17 @@ var indexSectionNames =
 {
   0: "all",
   1: "files",
-  2: "functions",
-  3: "enums",
-  4: "defines"
+  2: "enums",
+  3: "defines",
+  4: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Files",
-  2: "Functions",
-  3: "Enumerations",
-  4: "Macros"
+  2: "Enumerations",
+  3: "Macros",
+  4: "Pages"
 };
 

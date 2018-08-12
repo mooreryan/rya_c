@@ -9,6 +9,10 @@
 
 #include "rya.h"
 
+#ifdef HAVE_SYS_STAT_H
+
 rya_bool rya_file_exist(const char* fname);
+
+#endif
 
 #endif // _RYA_FILE_H

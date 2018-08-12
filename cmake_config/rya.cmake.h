@@ -7,17 +7,26 @@
 #ifndef _RYA_H
 #define _RYA_H
 
-#include <stdint.h>
+#include <stdlib.h>
 
-#define RYA_VERSION "@RYA_VERSION@"
+#define RYA_VERSION_MAJOR @RYA_VERSION_MAJOR@
+#define RYA_VERSION_MINOR @RYA_VERSION_MINOR@
+#define RYA_VERSION_PATCH @RYA_VERSION_PATCH@
+#define RYA_VERSION_STRING "@RYA_VERSION_STRING@"
 
+
+// CMake checks for certain heaeders
+#cmakedefine HAVE_STDARG_H
 #cmakedefine HAVE_STDINT_H
+#cmakedefine HAVE_SYS_STAT_H
 
+// CMake checks for certain functions
 #cmakedefine HAVE_STRNLEN
 #cmakedefine HAVE_VA_COPY
 #cmakedefine HAVE_VSNPRINTF
 
 
+// Some useful constants
 #define RYA_OKAY_INT 1
 #define RYA_ERROR_INT -10
 #define RYA_ERROR_PTR NULL
@@ -31,16 +40,20 @@ enum rya_bool_enum
 {
   rya_false = 0, rya_true = 1, rya_error = RYA_ERROR_INT
 };
-
 typedef enum rya_bool_enum rya_bool;
 
+// Standarized numeric types
 #ifdef HAVE_STDINT_H
+#include <stdint.h>
+
 typedef int32_t rya_int;
 typedef int64_t rya_long;
 #else
 typedef int  rya_int;
 typedef long rya_long;
 #endif
+
+// Macro definitions to follow.
 
 /**
  * @brief Like free, but better.  It sets the ptr to NULL.
