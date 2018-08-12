@@ -12,7 +12,10 @@
 #define RYA_VERSION "v0.1.0"
 
 #define HAVE_STDINT_H
-#define HAVE_VA_COPY_FUNC
+
+#define HAVE_STRNLEN
+#define HAVE_VA_COPY
+#define HAVE_VSNPRINTF
 
 
 #define RYA_OKAY_INT 1
@@ -43,5 +46,9 @@ typedef long rya_long;
  * @brief Like free, but better.  It sets the ptr to NULL.
  */
 #define rya_free(ptr) { free(ptr); (ptr) = 0; }
+
+#ifndef HAVE_VA_COPY
+#define va_copy(dest, src) dest = src
+#endif
 
 #endif // _RYA_H

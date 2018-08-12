@@ -28,13 +28,13 @@ if (NOT HAVE_STD_ARG_H)
 endif ()
 
 # We will define a shallow copy if it isn't there.
-check_symbol_exists(va_copy stdarg.h HAVE_VA_COPY_FUNC)
+check_symbol_exists(va_copy stdarg.h HAVE_VA_COPY)
 
-check_symbol_exists(vsnprintf stdio.h HAVE_VSNPRINTF_FUNC)
-if (NOT HAVE_VSNPRINTF_FUNC)
-    message(FATAL_ERROR "vsnprintf function not found")
-endif ()
+# Check for I/O related functions
+check_symbol_exists(vsnprintf stdio.h HAVE_VSNPRINTF)
 
+# Check for string related functions
+check_symbol_exists(strnlen string.h HAVE_STRNLEN)
 
 set(CMAKE_BINARY_DIR ${CMAKE_BINARY_DIR}/bin)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})

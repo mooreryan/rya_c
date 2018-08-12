@@ -4,7 +4,7 @@
  * @brief I contain format related functions for the Rya library.
  */
 
- #include <stdarg.h>
+#include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -16,8 +16,12 @@
 #include "rya.h"
 #include "rya_format.h"
 
+#ifdef HAVE_VSNPRINTF
+
 /**
  * @brief More or less a drop-in replacement for asprintf(), except that it should work regardless of whether or not the vsnprintf() implementation is broken.
+ *
+ * @note I will only be defined if HAVE_VSNPRINTF is set.
  * @param str
  * @param fmt
  * @param ...
@@ -40,6 +44,8 @@ int rya_asprintf(char** str, const char* fmt, ...)
 /**
  * @brief Format strings but nice.
  * @note Uses rya_vasprintf() internally, so see the notes and warnings there.
+ * @note I will only be defined if HAVE_VSNPRINTF is set.
+
  * @param fmt
  * @param ...
  * @retval RYA_ERROR_PTR on errors
@@ -75,6 +81,16 @@ char* rya_format(const char* fmt, ...)
 
 /**
  * @brief More or less a drop-in replacement for vasprintf(), except that it should work regardless of whether or not the vsnprintf() implementation is broken.
+ *
+ * Will set errno...
+ *
+ * ~~~
+ * | Value  | Meaning                                         |
+ * |--------|-------------------------------------------------|
+ * | ENOMEM | Insufficient storage space is available.        |
+ * | EILSEQ | An invalid wide character code was encountered. |
+ * ~~~
+ *
  * @param str_ptr
  * @param format
  * @param args
@@ -85,22 +101,29 @@ char* rya_format(const char* fmt, ...)
  * @todo Should I free the buffer as well?
  *
  * @note For more info, see the implementation of bformat() from the better string library and also this blog entry: http://insanecoding.blogspot.com/2014/06/memory-management-in-c-and-auto.html.
+ * @note I will only be defined if HAVE_VSNPRINTF is set.
+ *
+ * @warning About shallow copies...If your platform doesn't have a va_copy that does deep copies, we use a defined shallow copy version.  If you have args that require deep copying, then this will be a problem for you.
  */
 int rya_vasprintf(char** str_ptr, const char* format, va_list args)
 {
   size_t str_len     = 0;
   int    buffer_size = 15; // size of 4 32 bit ints by default
+  assert(buffer_size > 0);
   char* buffer = NULL;
 
   do {
+    errno = 0;
     *str_ptr = (char*)realloc(buffer, (size_t)buffer_size);
     if (*str_ptr == NULL) {
       rya_free(buffer);
       return -1;
-    }
+    } // else, *str_ptr will be allocated and buffer will be de-allocated
 
-    // now all the chars are non-null, we'll need this to check later.
-    memset(*str_ptr, '?', (size_t)buffer_size);
+    // now nearly all the chars are non-null, we'll need this to check later.
+    memset(*str_ptr, '?', (size_t)buffer_size - 1);
+    // Set the last char to nul so it's valid.
+    (*str_ptr)[buffer_size - 1] = '\0';
 
     // If we're on a platform where this is a deep copy, that's good.
     // If not, hope that you don't have args that require deep copying
@@ -129,7 +152,12 @@ int rya_vasprintf(char** str_ptr, const char* format, va_list args)
     // char before the size of the buffer we know it was at least sort
     // of successful.
 
-    str_len = strnlen(*str_ptr, (size_t)buffer_size); // TODO compiler check for strnlen
+#ifdef HAVE_STRNLEN
+    str_len = strnlen(*str_ptr, (size_t)buffer_size);
+#else
+    str_len = strlen(*str_ptr);
+#endif
+
 
     // We know that vsnprintf always null terminates.  Now if str_len
     // < buffer_size, we know that vsnprintf null terminated it as we
@@ -140,7 +168,6 @@ int rya_vasprintf(char** str_ptr, const char* format, va_list args)
     // invalid as it will fit inside of str_ptr properly.
     if (str_len >= INT_MAX) {
       // Something def went wrong here and our buffer_size was too big.
-      // TODO clean up str_ptr and buffer.
       rya_free(*str_ptr);
       return -1;
     }
@@ -165,7 +192,8 @@ int rya_vasprintf(char** str_ptr, const char* format, va_list args)
   // with a -1 and free the first arg, after iterating 27 times.  (2gb
   // max allocation on the last iteration)
 
+  // If you get all the way here, there was an error.
   rya_free(*str_ptr);
   return -1;
 }
-
+#endif
