@@ -1,13 +1,19 @@
 /**
  * @file
  * @author Ryan Moore
- * @brief I contain functions for the Rya library.
+ * @brief I'm the header for the Rya library.
  */
 
 #ifndef _RYA_H
 #define _RYA_H
 
 #include <stdint.h>
+
+#define RYA_VERSION "v0.1.0"
+
+#define HAVE_STDINT_H
+#define HAVE_VA_COPY_FUNC
+
 
 #define RYA_OKAY_INT 1
 #define RYA_ERROR_INT -10
@@ -24,6 +30,18 @@ enum rya_bool_enum
 };
 
 typedef enum rya_bool_enum rya_bool;
-typedef int32_t            rya_int;
+
+#ifdef HAVE_STDINT_H
+typedef int32_t rya_int;
+typedef int64_t rya_long;
+#else
+typedef int  rya_int;
+typedef long rya_long;
+#endif
+
+/**
+ * @brief Like free, but better.  It sets the ptr to NULL.
+ */
+#define rya_free(ptr) { free(ptr); (ptr) = 0; }
 
 #endif // _RYA_H
