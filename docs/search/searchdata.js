@@ -1,11 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "rt",
+  0: "r",
   1: "r",
   2: "r",
   3: "r",
-  4: "r",
-  5: "t"
+  4: "r"
 };
 
 var indexSectionNames =
@@ -14,8 +13,7 @@ var indexSectionNames =
   1: "files",
   2: "functions",
   3: "enums",
-  4: "defines",
-  5: "pages"
+  4: "defines"
 };
 
 var indexSectionLabels =
@@ -24,7 +22,6 @@ var indexSectionLabels =
   1: "Files",
   2: "Functions",
   3: "Enumerations",
-  4: "Macros",
-  5: "Pages"
+  4: "Macros"
 };
 

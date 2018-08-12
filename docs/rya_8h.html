@@ -90,9 +90,15 @@ Macros</h2></td></tr>
 <tr class="memitem:ab6cd6d1c63c1e26ea2d4537b77148354"><td class="memItemLeft" align="right" valign="top"><a id="ab6cd6d1c63c1e26ea2d4537b77148354"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>HAVE_STDINT_H</b></td></tr>
 <tr class="separator:ab6cd6d1c63c1e26ea2d4537b77148354"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa527f75e2f5b4ce985cab38af9bcb416"><td class="memItemLeft" align="right" valign="top"><a id="aa527f75e2f5b4ce985cab38af9bcb416"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>HAVE_VA_COPY_FUNC</b></td></tr>
-<tr class="separator:aa527f75e2f5b4ce985cab38af9bcb416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bee6d8db098b2230690f8e8db9ffb74"><td class="memItemLeft" align="right" valign="top"><a id="a9bee6d8db098b2230690f8e8db9ffb74"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HAVE_STRNLEN</b></td></tr>
+<tr class="separator:a9bee6d8db098b2230690f8e8db9ffb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8a14a6eb3e64adcffaa495d41dd2fd2"><td class="memItemLeft" align="right" valign="top"><a id="af8a14a6eb3e64adcffaa495d41dd2fd2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HAVE_VA_COPY</b></td></tr>
+<tr class="separator:af8a14a6eb3e64adcffaa495d41dd2fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ac6a60cb19181437136206238f16497"><td class="memItemLeft" align="right" valign="top"><a id="a4ac6a60cb19181437136206238f16497"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HAVE_VSNPRINTF</b></td></tr>
+<tr class="separator:a4ac6a60cb19181437136206238f16497"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ba72d53d23f7c3d9893fb0380825caa"><td class="memItemLeft" align="right" valign="top"><a id="a1ba72d53d23f7c3d9893fb0380825caa"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RYA_OKAY_INT</b>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a1ba72d53d23f7c3d9893fb0380825caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,8 +155,8 @@ Enumerations</h2></td></tr>
 <p>Return type for rya functions that seem like they should be true or false. </p>
 <p>Since errors are mapped to RYA_ERROR_INT you shouldn't just say <code>if (val)</code>, you need to say, <code>if (val == rya_true)</code>. Or, you need to first check for errors, then treat it like a regular true/false value. </p>
 
-<p class="definition">Definition at line <a class="el" href="rya_8h_source.html#l00027">27</a> of file <a class="el" href="rya_8h_source.html">rya.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  rya_false = 0, rya_true = 1, rya_error = RYA_ERROR_INT</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="rya_8h_source.html#l00030">30</a> of file <a class="el" href="rya_8h_source.html">rya.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  rya_false = 0, rya_true = 1, rya_error = RYA_ERROR_INT</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
