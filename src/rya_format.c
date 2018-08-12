@@ -83,6 +83,8 @@ char* rya_format(const char* fmt, ...)
  *
  * @todo I don't warn when there are more or fewer args than format specifiers.
  * @todo Should I free the buffer as well?
+ *
+ * @note For more info, see the implementation of bformat() from the better string library and also this blog entry: http://insanecoding.blogspot.com/2014/06/memory-management-in-c-and-auto.html.
  */
 int rya_vasprintf(char** str_ptr, const char* format, va_list args)
 {
