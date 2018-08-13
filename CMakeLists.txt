@@ -11,7 +11,7 @@ project("rya" C)
 # The version number.
 set(RYA_VERSION_MAJOR 0)
 set(RYA_VERSION_MINOR 1)
-set(RYA_VERSION_PATCH 0)
+set(RYA_VERSION_PATCH 1)
 set(RYA_VERSION_STRING "${RYA_VERSION_MAJOR}.${RYA_VERSION_MINOR}.${RYA_VERSION_PATCH}")
 
 
@@ -96,7 +96,7 @@ set_target_properties(rya_format PROPERTIES VERSION ${RYA_VERSION_STRING})
 set_target_properties(rya_format PROPERTIES PUBLIC_HEADER ${HEADER_DIR}/rya_format.h)
 
 
-target_compile_features(rya_format PRIVATE c_std_11)
+#target_compile_features(rya_format PRIVATE c_std_11)
 target_include_directories(rya_format PRIVATE ${HEADER_DIR})
 target_include_directories(rya_format PRIVATE ${SOURCE_DIR})
 
@@ -109,7 +109,7 @@ add_library(rya_file SHARED ${SOURCE_DIR}/rya_file.c)
 set_target_properties(rya_file PROPERTIES VERSION ${RYA_VERSION_STRING})
 set_target_properties(rya_file PROPERTIES PUBLIC_HEADER ${HEADER_DIR}/rya_file.h)
 
-target_compile_features(rya_file PRIVATE c_std_11)
+#target_compile_features(rya_file PRIVATE c_std_11)
 target_include_directories(rya_file PRIVATE ${HEADER_DIR})
 target_include_directories(rya_file PRIVATE ${SOURCE_DIR})
 
