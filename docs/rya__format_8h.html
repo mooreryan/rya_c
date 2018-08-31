@@ -82,14 +82,14 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0c0c8f9a901590b961fbade7254d031d"><td class="memItemLeft" align="right" valign="top"><a id="a0c0c8f9a901590b961fbade7254d031d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>rya_vasprintf</b> (char **str, const char *fmt, va_list args)</td></tr>
-<tr class="separator:a0c0c8f9a901590b961fbade7254d031d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dbd57d629d1dd0d1faa9c710e8a9a56"><td class="memItemLeft" align="right" valign="top"><a id="a9dbd57d629d1dd0d1faa9c710e8a9a56"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>rya_asprintf</b> (char **str, const char *fmt,...)</td></tr>
+<tr class="memitem:aebeccd5438b1a16030c816648946bf2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rya__format_8h.html#aebeccd5438b1a16030c816648946bf2a">rya_vasprintf</a> (char **str_ptr, const char *format, va_list args)</td></tr>
+<tr class="memdesc:aebeccd5438b1a16030c816648946bf2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">More or less a drop-in replacement for vasprintf(), except that it should work regardless of whether or not the vsnprintf() implementation is broken.  <a href="#aebeccd5438b1a16030c816648946bf2a">More...</a><br /></td></tr>
+<tr class="separator:aebeccd5438b1a16030c816648946bf2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dbd57d629d1dd0d1faa9c710e8a9a56"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rya__format_8h.html#a9dbd57d629d1dd0d1faa9c710e8a9a56">rya_asprintf</a> (char **str, const char *fmt,...)</td></tr>
+<tr class="memdesc:a9dbd57d629d1dd0d1faa9c710e8a9a56"><td class="mdescLeft">&#160;</td><td class="mdescRight">More or less a drop-in replacement for asprintf(), except that it should work regardless of whether or not the vsnprintf() implementation is broken.  <a href="#a9dbd57d629d1dd0d1faa9c710e8a9a56">More...</a><br /></td></tr>
 <tr class="separator:a9dbd57d629d1dd0d1faa9c710e8a9a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32a6ea8e87b3cd97106f92e5f795d411"><td class="memItemLeft" align="right" valign="top"><a id="a32a6ea8e87b3cd97106f92e5f795d411"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>rya_format</b> (const char *fmt,...)</td></tr>
+<tr class="memitem:a32a6ea8e87b3cd97106f92e5f795d411"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rya__format_8h.html#a32a6ea8e87b3cd97106f92e5f795d411">rya_format</a> (const char *fmt,...)</td></tr>
+<tr class="memdesc:a32a6ea8e87b3cd97106f92e5f795d411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format strings but nice.  <a href="#a32a6ea8e87b3cd97106f92e5f795d411">More...</a><br /></td></tr>
 <tr class="separator:a32a6ea8e87b3cd97106f92e5f795d411"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -97,7 +97,166 @@ char *&#160;</td><td class="memItemRight" valign="bottom"><b>rya_format</b> (con
 <dl class="section author"><dt>Author</dt><dd>Ryan Moore </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="rya__format_8h_source.html">rya_format.h</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a9dbd57d629d1dd0d1faa9c710e8a9a56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dbd57d629d1dd0d1faa9c710e8a9a56">&#9670;&nbsp;</a></span>rya_asprintf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rya_asprintf </td>
+          <td>(</td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>More or less a drop-in replacement for asprintf(), except that it should work regardless of whether or not the vsnprintf() implementation is broken. </p>
+<dl class="section note"><dt>Note</dt><dd>I will only be defined if HAVE_VSNPRINTF is set. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td></td></tr>
+    <tr><td class="paramname">fmt</td><td></td></tr>
+    <tr><td class="paramname">...</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>on errors </td></tr>
+    <tr><td class="paramname">the</td><td>number of chars written minus the terminating null char. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a32a6ea8e87b3cd97106f92e5f795d411"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32a6ea8e87b3cd97106f92e5f795d411">&#9670;&nbsp;</a></span>rya_format()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* rya_format </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Format strings but nice. </p>
+<dl class="section note"><dt>Note</dt><dd>Uses <a class="el" href="rya__format_8h.html#aebeccd5438b1a16030c816648946bf2a" title="More or less a drop-in replacement for vasprintf(), except that it should work regardless of whether ...">rya_vasprintf()</a> internally, so see the notes and warnings there. </dd>
+<dd>
+I will only be defined if HAVE_VSNPRINTF is set.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fmt</td><td></td></tr>
+    <tr><td class="paramname">...</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">RYA_ERROR_PTR</td><td>on errors </td></tr>
+    <tr><td class="paramname">the</td><td>formatted string </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aebeccd5438b1a16030c816648946bf2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebeccd5438b1a16030c816648946bf2a">&#9670;&nbsp;</a></span>rya_vasprintf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rya_vasprintf </td>
+          <td>(</td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>str_ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>More or less a drop-in replacement for vasprintf(), except that it should work regardless of whether or not the vsnprintf() implementation is broken. </p>
+<p>Will set errno...</p>
+<div class="fragment"><div class="line">| Value  | Meaning                                         |</div><div class="line">|--------|-------------------------------------------------|</div><div class="line">| ENOMEM | Insufficient storage space is available.        |</div><div class="line">| EILSEQ | An invalid wide character code was encountered. |</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str_ptr</td><td></td></tr>
+    <tr><td class="paramname">format</td><td></td></tr>
+    <tr><td class="paramname">args</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>on errors </td></tr>
+    <tr><td class="paramname">the</td><td>number of chars written minus the terminating null char.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">I don't warn when there are more or fewer args than format specifiers. </p>
+<p class="enddd">Should I free the buffer as well?</p>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>For more info, see the implementation of bformat() from the better string library and also this blog entry: <a href="http://insanecoding.blogspot.com/2014/06/memory-management-in-c-and-auto.html">http://insanecoding.blogspot.com/2014/06/memory-management-in-c-and-auto.html</a>. </dd>
+<dd>
+I will only be defined if HAVE_VSNPRINTF is set.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>About shallow copies...If your platform doesn't have a va_copy that does deep copies, we use a defined shallow copy version. If you have args that require deep copying, then this will be a problem for you. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -11,8 +11,8 @@
 
 #define RYA_VERSION_MAJOR 0
 #define RYA_VERSION_MINOR 1
-#define RYA_VERSION_PATCH 1
-#define RYA_VERSION_STRING "0.1.1"
+#define RYA_VERSION_PATCH 2
+#define RYA_VERSION_STRING "0.1.2"
 
 
 // CMake checks for certain heaeders
