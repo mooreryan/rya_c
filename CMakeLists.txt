@@ -4,14 +4,14 @@ cmake_minimum_required(VERSION 3.0)
 #set(CMAKE_C_COMPILER gcc)
 set(C_STANDARD_REQUIRED ON)
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Werror -g")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Werror -g -O3 -fopt-info-optimized")
 
 project("rya" C)
 
 # The version number.
 set(RYA_VERSION_MAJOR 0)
-set(RYA_VERSION_MINOR 1)
-set(RYA_VERSION_PATCH 2)
+set(RYA_VERSION_MINOR 2)
+set(RYA_VERSION_PATCH 0)
 set(RYA_VERSION_STRING "${RYA_VERSION_MAJOR}.${RYA_VERSION_MINOR}.${RYA_VERSION_PATCH}")
 
 
@@ -59,6 +59,7 @@ check_symbol_exists(vsnprintf stdio.h HAVE_VSNPRINTF)
 
 # Check for string related functions
 check_symbol_exists(strnlen string.h HAVE_STRNLEN)
+check_symbol_exists(strndup string.h HAVE_STRNDUP)
 
 #set(CMAKE_BINARY_DIR ${CMAKE_BINARY_DIR}/bin)
 #set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
@@ -114,6 +115,19 @@ target_include_directories(rya_file PRIVATE ${HEADER_DIR})
 target_include_directories(rya_file PRIVATE ${SOURCE_DIR})
 
 install(TARGETS rya_file
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+
+# rya_seq
+add_library(rya_seq SHARED ${SOURCE_DIR}/rya_seq.c)
+set_target_properties(rya_seq PROPERTIES VERSION ${RYA_VERSION_STRING})
+set_target_properties(rya_seq PROPERTIES PUBLIC_HEADER ${HEADER_DIR}/rya_seq.h)
+
+#target_compile_features(rya_seq PRIVATE c_std_11)
+target_include_directories(rya_seq PRIVATE ${HEADER_DIR})
+target_include_directories(rya_seq PRIVATE ${SOURCE_DIR})
+
+install(TARGETS rya_seq
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
         PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 

@@ -88,13 +88,13 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RYA_VERSION_MAJOR</b>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a5e613ec3fea49f0c75bcaf20f181162a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a216c5b339e5df26bc583a22b557378a6"><td class="memItemLeft" align="right" valign="top"><a id="a216c5b339e5df26bc583a22b557378a6"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RYA_VERSION_MINOR</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RYA_VERSION_MINOR</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a216c5b339e5df26bc583a22b557378a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2001cae1749f201b178a7427f912e2a"><td class="memItemLeft" align="right" valign="top"><a id="ab2001cae1749f201b178a7427f912e2a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RYA_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RYA_VERSION_PATCH</b>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:ab2001cae1749f201b178a7427f912e2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab318875ba31e8ae382d0e4b56f91e865"><td class="memItemLeft" align="right" valign="top"><a id="ab318875ba31e8ae382d0e4b56f91e865"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RYA_VERSION_STRING</b>&#160;&#160;&#160;&quot;0.1.2&quot;</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RYA_VERSION_STRING</b>&#160;&#160;&#160;&quot;0.2.0&quot;</td></tr>
 <tr class="separator:ab318875ba31e8ae382d0e4b56f91e865"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a3f8c7f8da8cac799fb620a2dbf2b15"><td class="memItemLeft" align="right" valign="top"><a id="a3a3f8c7f8da8cac799fb620a2dbf2b15"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>HAVE_STDARG_H</b></td></tr>
@@ -108,6 +108,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a9bee6d8db098b2230690f8e8db9ffb74"><td class="memItemLeft" align="right" valign="top"><a id="a9bee6d8db098b2230690f8e8db9ffb74"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>HAVE_STRNLEN</b></td></tr>
 <tr class="separator:a9bee6d8db098b2230690f8e8db9ffb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a51807b746f8e1a067ebdf86faf9a57"><td class="memItemLeft" align="right" valign="top"><a id="a3a51807b746f8e1a067ebdf86faf9a57"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HAVE_STRNDUP</b></td></tr>
+<tr class="separator:a3a51807b746f8e1a067ebdf86faf9a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8a14a6eb3e64adcffaa495d41dd2fd2"><td class="memItemLeft" align="right" valign="top"><a id="af8a14a6eb3e64adcffaa495d41dd2fd2"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>HAVE_VA_COPY</b></td></tr>
 <tr class="separator:af8a14a6eb3e64adcffaa495d41dd2fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,8 +173,8 @@ Enumerations</h2></td></tr>
 <p>Return type for rya functions that seem like they should be true or false. </p>
 <p>Since errors are mapped to RYA_ERROR_INT you shouldn't just say <code>if (val)</code>, you need to say, <code>if (val == rya_true)</code>. Or, you need to first check for errors, then treat it like a regular true/false value. </p>
 
-<p class="definition">Definition at line <a class="el" href="rya_8h_source.html#l00039">39</a> of file <a class="el" href="rya_8h_source.html">rya.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  rya_false = 0, rya_true = 1, rya_error = RYA_ERROR_INT</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="rya_8h_source.html#l00041">41</a> of file <a class="el" href="rya_8h_source.html">rya.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  rya_false = 0, rya_true = 1, rya_error = RYA_ERROR_INT</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

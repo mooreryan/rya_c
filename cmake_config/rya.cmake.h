@@ -22,6 +22,8 @@
 
 // CMake checks for certain functions
 #cmakedefine HAVE_STRNLEN
+#cmakedefine HAVE_STRNDUP
+
 #cmakedefine HAVE_VA_COPY
 #cmakedefine HAVE_VSNPRINTF
 

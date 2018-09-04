@@ -10,9 +10,9 @@
 #include <stdlib.h>
 
 #define RYA_VERSION_MAJOR 0
-#define RYA_VERSION_MINOR 1
-#define RYA_VERSION_PATCH 2
-#define RYA_VERSION_STRING "0.1.2"
+#define RYA_VERSION_MINOR 2
+#define RYA_VERSION_PATCH 0
+#define RYA_VERSION_STRING "0.2.0"
 
 
 // CMake checks for certain heaeders
@@ -22,6 +22,8 @@
 
 // CMake checks for certain functions
 #define HAVE_STRNLEN
+#define HAVE_STRNDUP
+
 #define HAVE_VA_COPY
 #define HAVE_VSNPRINTF
 
