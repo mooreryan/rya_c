@@ -2,7 +2,7 @@
 
 Snazzy functions in C.  Rya is short for Ryan, cos that's my name!
 
-Currently, I'm on version 0.2.1.
+Currently, I'm on version 0.2.2.
 
 ## Install
 
@@ -17,23 +17,25 @@ mkdir rya_c_source
 cd rya_c_source
 ```
 
-Then download the code.  If you have `wget`, run
-
-```bash
-wget 'https://github.com/mooreryan/rya_c/archive/v0.2.1.tar.gz'
-```
+Then download the code.  
 
 If you have `curl` run:
 
 ```bash
-\curl -L 'https://github.com/mooreryan/rya_c/archive/v0.2.1.tar.gz' > v0.2.1.tar.gz
+\curl -L 'https://github.com/mooreryan/rya_c/archive/v0.2.2.tar.gz' > v0.2.2.tar.gz
+```
+
+If you have `wget`, run
+
+```bash
+wget 'https://github.com/mooreryan/rya_c/archive/v0.2.2.tar.gz'
 ```
 
 Unzip the tar file and enter the resulting directory.
 
 ```bash
-tar xzf v0.2.1.tar.gz
-cd rya_c-0.2.1
+tar xzf v0.2.2.tar.gz
+cd rya_c-0.2.2
 ```
 
 Now we can build and install the library.
@@ -46,14 +48,30 @@ make
 make install
 ```
 
-*Note*:  If you want to change the location where the library is installed (for example, if you don't have sudo privileges), you can run `cmake` like this
+#### Potential problems
+
+##### Switching compilers
+
+If you're on a Mac you may need to use an actual `gcc` rather than the default apple compiler.  If you're having issues, try switching like this:
+
+```bash
+CC=/usr/local/bin/gcc-7 cmake ..
+```
+
+*Note*:  depending on which version of `gcc` you have installed, you may need to change `gcc-7` (version 7), to `gcc-8` (version 8), for example.
+
+
+##### Changing the install directory 
+
+If you want to change the location where the library is installed (for example, if you don't have sudo privileges), you can run `cmake` like this
 
 ```bash
 cmake -DCMAKE_INSTALL_PREFIX=/path/to/install/location ..
 ```
 
+##### No super user privileges
 
-*Note*:  You may need to run `sudo make install` rather than just `make install` depending on where you want the library installed.
+You may need to run `sudo make install` rather than just `make install` depending on where you want the library installed.
 
 ### Install from git repository
 
@@ -69,13 +87,7 @@ make install
 
 ### Switching compilers
 
-(This step is completely optional).  If you're on a Mac and want to use `gcc`, you could replace the cmake line above with this
-
-```bash
-CC=/usr/local/bin/gcc-7 cmake ..
-```
-
-*Note*:  depending on which version of `gcc` you have installed, you may need to change `gcc-7` (version 7), to `gcc-8` (version 8), for example.
+(This step is completely optional).  
 
 ## Tests
 
