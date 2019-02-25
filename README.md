@@ -18,7 +18,7 @@ If you don't have CMake installed, please go [here](https://cmake.org/install/) 
 
 ### From the latest release
 
-Here are some detailed instructions in case you are not a C programmer and need to install this library because another program relies on it.  (E.g., my sampling reads program.)
+Here are some detailed instructions in case you are not a C programmer and need to install this library because another program relies on it.  (E.g., my [sampling reads](https://github.com/mooreryan/sample_seqs) program.)
 
 First, make a directory to hold the source code.
 
