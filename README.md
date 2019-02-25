@@ -2,7 +2,7 @@
 
 Snazzy functions in C.  Rya is short for Ryan, cos that's my name!
 
-Currently, I'm on version 0.2.0.
+Currently, I'm on version 0.2.1.
 
 ## Install
 
@@ -20,20 +20,20 @@ cd rya_c_source
 Then download the code.  If you have `wget`, run
 
 ```bash
-wget 'https://github.com/mooreryan/rya_c/archive/v0.2.0.tar.gz'
+wget 'https://github.com/mooreryan/rya_c/archive/v0.2.1.tar.gz'
 ```
 
 If you have `curl` run:
 
 ```bash
-\curl -L 'https://github.com/mooreryan/rya_c/archive/v0.2.0.tar.gz' > v0.2.0.tar.gz
+\curl -L 'https://github.com/mooreryan/rya_c/archive/v0.2.1.tar.gz' > v0.2.1.tar.gz
 ```
 
 Unzip the tar file and enter the resulting directory.
 
 ```bash
-tar xzf v0.2.0.tar.gz
-cd rya_c-0.2.0
+tar xzf v0.2.1.tar.gz
+cd rya_c-0.2.1
 ```
 
 Now we can build and install the library.

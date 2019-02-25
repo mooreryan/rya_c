@@ -4,14 +4,14 @@ cmake_minimum_required(VERSION 3.0)
 #set(CMAKE_C_COMPILER gcc)
 set(C_STANDARD_REQUIRED ON)
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Werror -g -O3 -fopt-info-optimized")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Werror -g -O3")
 
 project("rya" C)
 
 # The version number.
 set(RYA_VERSION_MAJOR 0)
 set(RYA_VERSION_MINOR 2)
-set(RYA_VERSION_PATCH 0)
+set(RYA_VERSION_PATCH 1)
 set(RYA_VERSION_STRING "${RYA_VERSION_MAJOR}.${RYA_VERSION_MINOR}.${RYA_VERSION_PATCH}")
 
 
