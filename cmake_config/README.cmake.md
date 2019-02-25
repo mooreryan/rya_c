@@ -36,7 +36,7 @@ tar xzf v@RYA_VERSION_STRING@.tar.gz
 cd rya_c-@RYA_VERSION_STRING@
 ```
 
-Now we can build and instal the library.
+Now we can build and install the library.
 
 ```bash
 mkdir build
@@ -46,7 +46,14 @@ make
 make install
 ```
 
-*Note*:  You may need to run `sudo make install` rather than just `make install`.
+*Note*:  If you want to change the location where the library is installed (for example, if you don't have sudo privileges), you can run `cmake` like this
+
+```bash
+cmake -DCMAKE_INSTALL_PREFIX=/path/to/install/location ..
+```
+
+
+*Note*:  You may need to run `sudo make install` rather than just `make install` depending on where you want the library installed.
 
 ### Install from git repository
 

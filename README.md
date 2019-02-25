@@ -8,7 +8,7 @@ Currently, I'm on version 0.2.0.
 
 ### From the latest release
 
-Here are some detailed instructions in case you are not a C programmer and need to install this library because another program relies on it.  (E.g., my [read sampling](https://github.com/mooreryan/sample_seqs) program.)
+Here are some detailed instructions in case you are not a C programmer and need to install this library because another program relies on it.  (E.g., my sampling reads program.)
 
 First, make a directory to hold the source code.
 
@@ -46,7 +46,14 @@ make
 make install
 ```
 
-*Note*:  You may need to run `sudo make install` rather than just `make install`.
+*Note*:  If you want to change the location where the library is installed (for example, if you don't have sudo privileges), you can run `cmake` like this
+
+```bash
+cmake -DCMAKE_INSTALL_PREFIX=/path/to/install/location ..
+```
+
+
+*Note*:  You may need to run `sudo make install` rather than just `make install` depending on where you want the library installed.
 
 ### Install from git repository
 
