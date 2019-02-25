@@ -6,6 +6,16 @@ Currently, I'm on version @RYA_VERSION_STRING@.
 
 ## Install
 
+### Dependencies
+
+You need `cmake` to compile.  Check if you have `cmake` with
+
+```bash
+which cmake
+```
+
+If you don't have CMake installed, please go [here](https://cmake.org/install/) and install it.
+
 ### From the latest release
 
 Here are some detailed instructions in case you are not a C programmer and need to install this library because another program relies on it.  (E.g., my sampling reads program.)
