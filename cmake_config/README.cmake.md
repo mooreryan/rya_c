@@ -76,8 +76,28 @@ CC=/usr/local/bin/gcc-7 cmake ..
 If you want to change the location where the library is installed (for example, if you don't have sudo privileges), you can run `cmake` like this
 
 ```bash
-cmake -DCMAKE_INSTALL_PREFIX=/path/to/install/location ..
+cmake -DCMAKE_INSTALL_PREFIX=$HOME ..
 ```
+
+which would put the library files under `$HOME/lib` or `$HOME/lib64` and the header files under `$HOME/include`.
+
+You'll also probably want to edit your shell config file to modify the `LD_LIBRARY_PATH` so that programs can find the shared object files.
+
+So you should add the following to your shell config file (e.g., `~/.profile`, `~/.bash_profile`, or whatever you use):
+
+```bash
+# Local shared object libs
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"$HOME"/lib
+```
+or 
+
+```bash
+# Local shared object libs
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"$HOME"/lib64
+```
+
+depending on if the file is in `$HOME/lib` or `$HOME/lib64`.
+
 
 ##### No super user privileges
 

@@ -2,7 +2,7 @@
 
 Snazzy functions in C.  Rya is short for Ryan, cos that's my name!
 
-Currently, I'm on version 0.2.2.
+Currently, I'm on version 0.2.3.
 
 ## Install
 
@@ -32,20 +32,20 @@ Then download the code.
 If you have `curl` run:
 
 ```bash
-\curl -L 'https://github.com/mooreryan/rya_c/archive/v0.2.2.tar.gz' > v0.2.2.tar.gz
+\curl -L 'https://github.com/mooreryan/rya_c/archive/v0.2.3.tar.gz' > v0.2.3.tar.gz
 ```
 
 If you have `wget`, run
 
 ```bash
-wget 'https://github.com/mooreryan/rya_c/archive/v0.2.2.tar.gz'
+wget 'https://github.com/mooreryan/rya_c/archive/v0.2.3.tar.gz'
 ```
 
 Unzip the tar file and enter the resulting directory.
 
 ```bash
-tar xzf v0.2.2.tar.gz
-cd rya_c-0.2.2
+tar xzf v0.2.3.tar.gz
+cd rya_c-0.2.3
 ```
 
 Now we can build and install the library.
@@ -76,8 +76,28 @@ CC=/usr/local/bin/gcc-7 cmake ..
 If you want to change the location where the library is installed (for example, if you don't have sudo privileges), you can run `cmake` like this
 
 ```bash
-cmake -DCMAKE_INSTALL_PREFIX=/path/to/install/location ..
+cmake -DCMAKE_INSTALL_PREFIX=$HOME ..
 ```
+
+which would put the library files under `$HOME/lib` or `$HOME/lib64` and the header files under `$HOME/include`.
+
+You'll also probably want to edit your shell config file to modify the `LD_LIBRARY_PATH` so that programs can find the shared object files.
+
+So you should add the following to your shell config file (e.g., `~/.profile`, `~/.bash_profile`, or whatever you use):
+
+```bash
+# Local shared object libs
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"$HOME"/lib
+```
+or 
+
+```bash
+# Local shared object libs
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"$HOME"/lib64
+```
+
+depending on if the file is in `$HOME/lib` or `$HOME/lib64`.
+
 
 ##### No super user privileges
 
