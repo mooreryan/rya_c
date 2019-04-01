@@ -79,7 +79,7 @@ If you want to change the location where the library is installed (for example, 
 cmake -DCMAKE_INSTALL_PREFIX=$HOME ..
 ```
 
-which would put the library files under `$HOME/lib` or `$HOME/lib64` and the header files under `$HOME/include`.
+which would put the shared object files under `$HOME/lib` or `$HOME/lib64` and the header files under `$HOME/include`.
 
 You'll also probably want to edit your shell config file to modify the `LD_LIBRARY_PATH` so that programs can find the shared object files.
 
